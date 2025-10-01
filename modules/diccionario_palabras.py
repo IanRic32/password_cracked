@@ -1,10 +1,10 @@
-from utils import sustituciones, separadores, caracteres_finales
+from modules.utils import sustituciones, separadores, caracteres_finales
 import itertools
 from modules.dates_generation import generar_fechas_completas_optimizada as generar_fechas_completas
-from variantes_words import generar_variantes_palabra
+from modules.variantes_words import generar_variantes_palabra
 
 def generar_diccionario_final(palabra_o_frase, anios, output_file, generar_fechas):
-    print(f"⚙️ Procesando: '{palabra_o_frase}'...")
+    print(f"Procesando: '{palabra_o_frase}'...")
     
     palabras_individuales = palabra_o_frase.strip().split()
     
@@ -62,5 +62,5 @@ def generar_diccionario_final(palabra_o_frase, anios, output_file, generar_fecha
         if lista_final:
             f.write('\n')
             
-    print(f"\n Diccionario generado con {len(lista_final)} combinaciones.")
+    print(f"\n Diccionario generado con {len(lista_final):4e} combinaciones.")
     print(f"Guardado en: {output_file}")
